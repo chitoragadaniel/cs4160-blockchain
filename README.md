@@ -3,7 +3,7 @@
 A 3-node Proof-of-Work blockchain built on [py-ipv8](https://github.com/Tribler/py-ipv8).
 Each group member runs one node. The nodes mine blocks, gossip them, converge on a
 single chain via the longest-chain rule, and answer queries from the Lab 3 grading
-server. See [`assignment_3.md`](assignment_3.md) for the full assignment spec.
+server. See [`assignment_3.md`](lab3/assignment_3.md) for the full assignment spec.
 
 ## What it does
 
@@ -112,6 +112,6 @@ uv run pytest assignment_3/test -v
   `chain.blocks` (source of truth, per-record CRC32) plus a rebuildable `chain.index` for
   O(1) reads by height. A torn or bit-flipped tail is healed on boot; a background daemon
   compacts dead bytes without blocking appends; old blocks are pruned to header-only while
-  staying verifiable. See [`blockchain/README.md`](blockchain/README.md#storagepy).
+  staying verifiable. See [`blockchain/README.md`](lab3/blockchain/README.md#storagepy).
 - **Re-registration loop** (`network/registering_community.py`) — re-registers after the
   server's attempt window elapses until the group's pass is recorded.
